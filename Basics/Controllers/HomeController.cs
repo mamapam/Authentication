@@ -20,6 +20,18 @@ namespace Basics.Controllers
 			return View();
 		}
 
+		[Authorize(Policy = "Claim.DoB")]
+		public IActionResult SecretPolicy()
+		{
+			return View("Secret");
+		}
+
+		[Authorize(Roles = "Admin")]
+		public IActionResult SecretRole()
+		{
+			return View("Secret");
+		}
+
 		public IActionResult Authenticate()
 		{
 			// Create a user
@@ -28,6 +40,8 @@ namespace Basics.Controllers
 			{
 				new Claim(ClaimTypes.Name, "Bob"),
 				new Claim(ClaimTypes.Email, "Bob@fmail.com"),
+				new Claim(ClaimTypes.DateOfBirth, "11/11/2000"),
+				new Claim(ClaimTypes.Role, "Admin"),
 				new Claim("Grandma.Says", "Very nice boi"),
 			};
 
