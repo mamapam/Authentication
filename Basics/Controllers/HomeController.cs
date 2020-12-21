@@ -41,6 +41,7 @@ namespace Basics.Controllers
 			return View("Secret");
 		}
 
+		[AllowAnonymous]
 		public IActionResult Authenticate()
 		{
 			// Create a user
