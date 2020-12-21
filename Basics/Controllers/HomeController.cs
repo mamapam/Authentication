@@ -3,11 +3,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Basics.Controllers
 {
 	public class HomeController : Controller
 	{
+		// MAY NOT WANT TO INJECT THIS HERE BUT PERHAPS ONLY AT FUNCTION LEVEL
+		//private readonly IAuthorizationService _authorizationService;
+
+		//public HomeController(IAuthorizationService authorizationService)
+		//{
+		//	_authorizationService = authorizationService;
+		//}
+
 		public IActionResult Index()
 		{
 			return View();
@@ -59,6 +68,27 @@ namespace Basics.Controllers
 			HttpContext.SignInAsync(userPrincipal);
 
 			return RedirectToAction("Index");
+		}
+
+		// This way makes injecting local to the function
+		public async Task<IActionResult> DoStuff(
+			[FromServices] IAuthorizationService authorizationService)
+		{
+			// we are doing stuff here
+
+			// below code allows us to do authorization strategically in certain parts of code
+
+			var builder = new AuthorizationPolicyBuilder("Schema");
+			var customPolicy = builder.RequireClaim("Hello").Build();
+
+			var authResult = await authorizationService.AuthorizeAsync(User, "Claim.DoB", customPolicy);
+
+			if (authResult.Succeeded)
+			{
+				return View("Index");
+			}
+
+			return View("Index");
 		}
 
 	}
