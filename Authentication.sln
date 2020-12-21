@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basics", "Basics\Basics.csproj", "{ADFFE5EE-FD6F-4F1B-8545-80F4B8DFCFBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basics", "Basics\Basics.csproj", "{ADFFE5EE-FD6F-4F1B-8545-80F4B8DFCFBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityExample", "IdentityExample\IdentityExample.csproj", "{8D089250-683F-4851-A987-FCDB5770E44E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityExample", "IdentityExample\IdentityExample.csproj", "{8D089250-683F-4851-A987-FCDB5770E44E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "basic", "basic", "{6403B4B8-00A9-47BB-A11C-733EBCA1AF14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "oauth", "oauth", "{89248B04-EFFB-4040-BB9D-9DA6DC5235A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{70B308B5-CDF5-4A6A-9612-8E3FE6A4EA82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,18 @@ Global
 		{8D089250-683F-4851-A987-FCDB5770E44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D089250-683F-4851-A987-FCDB5770E44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D089250-683F-4851-A987-FCDB5770E44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B308B5-CDF5-4A6A-9612-8E3FE6A4EA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B308B5-CDF5-4A6A-9612-8E3FE6A4EA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B308B5-CDF5-4A6A-9612-8E3FE6A4EA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B308B5-CDF5-4A6A-9612-8E3FE6A4EA82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ADFFE5EE-FD6F-4F1B-8545-80F4B8DFCFBB} = {6403B4B8-00A9-47BB-A11C-733EBCA1AF14}
+		{8D089250-683F-4851-A987-FCDB5770E44E} = {6403B4B8-00A9-47BB-A11C-733EBCA1AF14}
+		{70B308B5-CDF5-4A6A-9612-8E3FE6A4EA82} = {89248B04-EFFB-4040-BB9D-9DA6DC5235A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {554E2D6F-B388-4367-9906-655A73BAADFC}
